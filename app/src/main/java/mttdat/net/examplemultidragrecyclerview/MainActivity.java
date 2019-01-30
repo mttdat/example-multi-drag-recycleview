@@ -60,12 +60,13 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (rs){
                     case BoardAdapter.NO_UPDATE:
-                        Toast.makeText(MainActivity.this, string, )
                         break;
                     case BoardAdapter.REMOVE_LAST:
                         sendBackChosenCharToBoard(boardAdapter.getLatestChosen());
                         break;
                 }
+
+                Toast.makeText(MainActivity.this, string, Toast.LENGTH_SHORT).show();
             }
         }
 
