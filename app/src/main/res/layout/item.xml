@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="90dp"
+    android:layout_height="90dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Please note on the tag "touchable" which we must pass as param in constructor to let our listener know which part of the item will be listening to touch event -->
+    <View
+        android:tag="touchable"
+        android:id="@+id/v_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bkg_corner_gray"
+        app:layout_constraintWidth_percent="0.78846153846"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/v_background"
+        app:layout_constraintEnd_toEndOf="@id/v_background"
+        app:layout_constraintTop_toTopOf="@id/v_background"
+        app:layout_constraintBottom_toBottomOf="@id/v_background"/>
+
+</android.support.constraint.ConstraintLayout>
