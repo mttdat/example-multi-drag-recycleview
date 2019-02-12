@@ -86,16 +86,17 @@ abstract public class OnItemTouchMultiDragListener implements RecyclerView.OnIte
 
             if(vTouchable != null && isInView(motionEvent, vTouchable)) {
 
-                if(isIn){
+                RecyclerView.ViewHolder holder = recyclerView.getChildViewHolder(v);
+                int pos = holder.getAdapterPosition();
+
+                if(isIn && pos == lastPos || pos == -1){
+                    // Still in the same pos or can not determine what the pos is.
                     return false;
                 }
 
                 timeDown = Calendar.getInstance().getTimeInMillis();
 
                 isIn = true;
-
-                RecyclerView.ViewHolder holder = recyclerView.getChildViewHolder(v);
-                int pos = holder.getAdapterPosition();
 
                 if(action == MotionEvent.ACTION_DOWN){
                     onDownTouchableView(pos);
